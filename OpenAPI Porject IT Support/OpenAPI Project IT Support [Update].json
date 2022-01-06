@@ -161,7 +161,13 @@
                     "name": "TotalTonaseRebar",
                     "description": "menginput total ton baja yang digunakan, dengan satuan kilogram",
                     "required": true,
-                    "in": "query"
+                    "in": "query",
+                    "schema":{
+                        "type": "string",
+                        "nullable": false,
+                        "maxLength": 50,
+                        "minLength": 1
+                    }
                 },
                 {
                     "name": "StatusProject",
@@ -179,19 +185,37 @@
                     "name": "MaxPriceTrailer",
                     "description": "menginput harga dari mobil Trailer, dari suatu project tersebut",
                     "required": true,
-                    "in": "query"
+                    "in": "query",
+                    "schema":{
+                        "type": "string",
+                        "nullable": false,
+                        "maxLength": 50,
+                        "minLength": 1
+                    }
                 },
                 {
                     "name": "MaxPriceTronton",
                     "description": "menginput harga dari truk Tronton, dari suatu project tersebut",
                     "required": true,
-                    "in": "query"
+                    "in": "query",
+                    "schema":{
+                        "type": "string",
+                        "nullable": false,
+                        "maxLength": 50,
+                        "minLength": 1
+                    }
                 },
                 {
                     "name": "MaxPriceOthers",
                     "description": "menginput harga lain-lainnya, dari project tersebut",
                     "required": true,
-                    "in": "query"
+                    "in": "query",
+                    "schema":{
+                        "type": "string",
+                        "nullable": false,
+                        "maxLength": 50,
+                        "minLength": 1
+                    }
                 }
             ]
         }
