@@ -1,2 +1,2 @@
 # GitHub-Magang
-#GitHub Repository untuk kegiatan Magang
+# GitHub Repository untuk kegiatan Magang
