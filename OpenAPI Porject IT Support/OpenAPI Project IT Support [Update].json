@@ -401,7 +401,7 @@
               "name": "Description",
               "in": "query",
               "required": false,
-              "description": "Menampilkan list dari daftar Project Category",
+              "description": "Menampilkan list dari daftar Project Category"
             }
           ],
           "responses": {}
