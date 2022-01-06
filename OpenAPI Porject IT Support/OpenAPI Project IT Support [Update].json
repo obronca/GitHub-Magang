@@ -235,19 +235,37 @@
                 "name": "ProjectName",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah nama Project"
+                "description": "Mengubah nama Project",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 100,
+                  "minLength": 1
+                }
               },
               {
                 "name": "Address1",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah alamat utama dari project"
+                "description": "Mengubah alamat utama dari project",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 250,
+                  "minLength": 1
+                }
               },
               {
                 "name": "Address2",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah letak kota dari project"
+                "description": "Mengubah letak kota dari project",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 250,
+                  "minLength": 1
+                }
               },
               {
                 "name": "Address3",
@@ -307,13 +325,25 @@
                 "name": "BuildingArea",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah luas area gedung untuk pembangunan project"
+                "description": "Mengubah luas area gedung untuk pembangunan project",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 250,
+                  "minLength": 1
+                }
               },
               {
                 "name": "TotalTonaseRebar",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah total kebutuhan besi dan beton dalam satuan kilogram (kg)"
+                "description": "Mengubah total kebutuhan besi dan beton dalam satuan kilogram (kg)",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 250,
+                  "minLength": 1
+                }
               },
               {
                 "name": "StatusProject",
@@ -337,13 +367,25 @@
                 "name": "MaxPriceTronton",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah jumlah harga besi dan beton maksimum yang diankut Tronton"
+                "description": "Mengubah jumlah harga besi dan beton maksimum yang diankut Tronton",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 250,
+                  "minLength": 1
+                }
               },
               {
                 "name": "MaxPriceOthers",
                 "in": "query",
                 "required": true,
-                "description": "Mengubah jumlah harga besi dan beton maksimum yang diangkut kendaraan lainnya"
+                "description": "Mengubah jumlah harga besi dan beton maksimum yang diangkut kendaraan lainnya",
+                "schema":{
+                  "type": "string",
+                  "nullable": false,
+                  "maxLength": 250,
+                  "minLength": 1
+                }
               }
             ],
             "responses": {}
@@ -358,8 +400,8 @@
             {
               "name": "Description",
               "in": "query",
-              "required": true,
-              "description": "Menampilkan deskripsi dari Project Category"
+              "required": false,
+              "description": "Menampilkan list dari daftar Project Category",
             }
           ],
           "responses": {}
@@ -373,53 +415,25 @@
               {
                 "name": "SuplID",
                 "in": "query",
-                "required": true,
+                "required": false,
                 "description": "Menampilkan list data Customer"
               },
               {
                 "name": "SuplName",
                 "in": "query",
-                "required": true,
+                "required": false,
                 "description": "Menampilkan nama-nama Supplier"
               },
               {
                 "name": "TypeSupplier",
                 "in": "query",
-                "required": true,
+                "required": false,
                 "description": "Menampilkan jenis-jenis Supplier"
               }
             ],
             "responses": {}
           }
         }
-    
-  },
-  "/ProjectClass/ContractSupplierList" : {
-    "get" :{
-      "summary": "Menampilkan list Customer",
-      "description": "Menampilkan list data Customer berdasarkan Customer",
-      "parameters":[
-        {
-          "name": "SuplID",
-          "in": "query",
-          "required": true,
-          "description": "Menampilkan list data Customer"
-        },
-        {
-          "name": "SuplName",
-          "in": "query",
-          "required": true,
-          "description": "Menampilkan nama-nama Supplier"
-        },
-        {
-          "name": "TypeSupplier",
-          "in": "query",
-          "required": true,
-          "description": "Menampilkan jenis-jenis Supplier"
-        }
-      ],
-      "responses": {}
-    }
   }
 }
 }
