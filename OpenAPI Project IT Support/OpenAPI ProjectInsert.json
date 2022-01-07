@@ -225,7 +225,7 @@
               "required": true,
               "in": "query",
               "schema": {
-                "type": "number",
+                "type": "string",
                 "nullable": false,
                 "maxLength": 250,
                 "minLength": 1
@@ -261,7 +261,7 @@
               "required": true,
               "in": "query",
               "schema": {
-                "type": "string",
+                "type": "number",
                 "nullable": false,
                 "maxLength": 50,
                 "minLength": 1
@@ -328,13 +328,13 @@
                         "type": "string"
                       },
                       "MaxPriceTrailer": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "MaxPriceTronton": {
-                        "type": "string"
+                        "type": "number"
                       },
                       "MaxPriceOthers": {
-                        "type": "string"
+                        "type": "number"
                       }
                     }
                   }
