@@ -1,342 +1,366 @@
 {
-    "openapi": "3.0.3",
-    "info": {
-      "title": "Project",
-      "version": "1",
-      "description": "OpenAPI untuk Project",
-      "contact": {
-        "name": "The Master Steel"
-      }
-    },
-    "servers": [
-      {
-        "url": "https://dev.project.com/api/v1",
-        "variables": {
-          "environment": {
-            "default": "dev",
-            "enum": [
-              "dev"
-            ],
-            "description": "server environment"
-          }
-        },
-        "description": "dev openAPI server"
-      }
-    ],
-    "paths": {
-    "/ProjectClass/ProjectUpdate/": {
-    "put": {
-      "summary": "Update project yang sudah ada",
-      "description": "Mengubah data project yang sudah ada",
-      "parameters": [
-        {
-          "name": "ProjectID",
-          "in": "query",
-          "required": false,
-          "description": "Sebagai identifier dari suatu project, dan bersifat auto-generated",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "ProjectName",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah nama Project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 100,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "Address1",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah alamat utama dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "Address2",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah letak kota dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "Address3",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah letak provinsi dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "CityID",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah nomor ID dari suatu kota berdasarkan nama kota",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "Owner",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah pemilik perusahaan dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "ManagementKonstruksi",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah management konstruksi dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "Kontraktor",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah kontraktor dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "Konsultan",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah konsultan dari project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "EstimasiFinish",
-          "in": "query",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          },
-          "description": "Mengubah waktu estimasi kapan project akan selesai"
-        },
-        {
-          "name": "NamaProjectManager",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          },
-          "in": "query",
-          "required": true,
-          "description": "Mengubah nama project manager / pemilik project"
-        },
-        {
-          "name": "ContactProjectManager",
-          "in": "query",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          },
-          "required": true,
-          "description": "Mengubah nomor telpon project manager / pemilik project"
-        },
-        {
-          "name": "BuildingArea",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah luas area gedung untuk pembangunan project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "TotalTonaseRebar",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah total kebutuhan besi dan beton dalam satuan kilogram (kg)",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "StatusProject",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah status dari suatu project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "ProjectCategory",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah kategori dari suatu project",
-          "schema": {
-            "type": "string",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "MaxPriceTrailer",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah jumlah harga besi dan beton maksimum yang diangkut Trailer",
-          "schema": {
-            "type": "number",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "MaxPriceTronton",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah jumlah harga besi dan beton maksimum yang diankut Tronton",
-          "schema": {
-            "type": "number",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
-        },
-        {
-          "name": "MaxPriceOthers",
-          "in": "query",
-          "required": true,
-          "description": "Mengubah jumlah harga besi dan beton maksimum yang diangkut kendaraan lainnya",
-          "schema": {
-            "type": "number",
-            "nullable": false,
-            "maxLength": 250,
-            "minLength": 1
-          }
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Project",
+    "version": "1",
+    "description": "OpenAPI untuk Project",
+    "contact": {
+      "name": "The Master Steel"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dev.project.com/api/v1",
+      "variables": {
+        "environment": {
+          "default": "dev",
+          "enum": [
+            "dev"
+          ],
+          "description": "server environment"
         }
-      ],
-      "responses": {
-        "200": {
-          "description": "Operation Succeeded!",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "ProjectID": {
-                    "type": "string"
-                  },
-                  "ProjectName": {
-                    "type": "string"
-                  },
-                  "Address1": {
-                    "type": "string"
-                  },
-                  "Address2": {
-                    "type": "string"
-                  },
-                  "Address3": {
-                    "type": "string"
-                  },
+      },
+      "description": "dev openAPI server"
+    }
+  ],
+  "paths": {
+    "/ProjectClass/ProjectUpdate/": {
+      "put": {
+        "summary": "Update project yang sudah ada",
+        "description": "Mengubah data project yang sudah ada",
+        "parameters": [
+          {
+            "name": "ProjectID",
+            "in": "query",
+            "required": false,
+            "description": "Sebagai identifier dari suatu project, dan bersifat auto-generated",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "ProjectName",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah nama Project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 100,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Address1",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah alamat utama dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Address2",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah letak kota dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Address3",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah letak provinsi dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "CityID",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah nomor ID dari suatu kota berdasarkan nama kota",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Owner",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah pemilik perusahaan dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "ManagementKonstruksi",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah management konstruksi dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Kontraktor",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah kontraktor dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Konsultan",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah konsultan dari project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "EstimasiFinish",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            },
+            "description": "Mengubah waktu estimasi kapan project akan selesai"
+          },
+          {
+            "name": "NamaProjectManager",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            },
+            "in": "query",
+            "required": true,
+            "description": "Mengubah nama project manager / pemilik project"
+          },
+          {
+            "name": "ContactProjectManager",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            },
+            "required": true,
+            "description": "Mengubah nomor telpon project manager / pemilik project"
+          },
+          {
+            "name": "BuildingArea",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah luas area gedung untuk pembangunan project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "TotalTonaseRebar",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah total kebutuhan besi dan beton dalam satuan kilogram (kg)",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "StatusProject",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah status dari suatu project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "ProjectCategory",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah kategori dari suatu project",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "MaxPriceTrailer",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah jumlah harga besi dan beton maksimum yang diangkut Trailer",
+            "schema": {
+              "type": "number",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "MaxPriceTronton",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah jumlah harga besi dan beton maksimum yang diankut Tronton",
+            "schema": {
+              "type": "number",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "MaxPriceOthers",
+            "in": "query",
+            "required": true,
+            "description": "Mengubah jumlah harga besi dan beton maksimum yang diangkut kendaraan lainnya",
+            "schema": {
+              "type": "number",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Succeeded!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ProjectID": {
+                      "type": "string"
+                    },
+                    "ProjectName": {
+                      "type": "string"
+                    },
+                    "Address1": {
+                      "type": "string"
+                    },
+                    "Address2": {
+                      "type": "string"
+                    },
+                    "Address3": {
+                      "type": "string"
+                    },
+                    "CityID": {
+                      "type": "string"
+                    },
+                    "Owner": {
+                      "type": "string"
+                    },
+                    "Management Konstruksi": {
+                      "type": "string"
+                    },
+                    "Kontraktor": {
+                      "type": "string"
+                    },
+                    "Konsultant": {
+                      "type": "string"
+                    },
+                    "EstimasiFinish": {
+                      "type": "string"
+                    },
+                    "NamaProjectManager": {
+                      "type": "string"
+                    },
+                    "ContactProjectManager": {
+                      "type": "string"
+                    },
+                    "BuildingArea": {
+                      "type": "string"
+                    },
+                    "TotalTonaseRebar": {
+                      "type": "string"
+                    },
+                    "StatusProject": {
+                      "type": "string"
+                    },
+                    "ProjectCategory": {
+                      "type": "string"
+                    },
+                    "MaxPriceTrailer": {
+                      "type": "number"
+                    },
+                    "MaxPriceTronton": {
+                      "type": "number"
+                    },
+                    "MaxPriceOthers": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "examples": {
                   "CityID": {
-                    "type": "string"
+                    "description": "Mengambil dari tabel Trx_Project"
                   },
                   "Owner": {
-                    "type": "string"
-                  },
-                  "Management Konstruksi": {
-                    "type": "string"
+                    "description": "Mengambil dari tabel MS_Supplier"
                   },
                   "Kontraktor": {
-                    "type": "string"
+                    "description": "Mengambil dari tabel MS_Supplier1"
+                  },
+                  "Management Konstruksi": {
+                    "description": "Mengambil dari tabel MS_Supplier2"
                   },
                   "Konsultant": {
-                    "type": "string"
-                  },
-                  "EstimasiFinish": {
-                    "type": "string"
-                  },
-                  "NamaProjectManager": {
-                    "type": "string"
-                  },
-                  "ContactProjectManager": {
-                    "type": "string"
-                  },
-                  "BuildingArea": {
-                    "type": "string"
-                  },
-                  "TotalTonaseRebar": {
-                    "type": "string"
+                    "description": "Mengambil dari tabel MS_Supplier3"
                   },
                   "StatusProject": {
-                    "type": "string"
+                    "description": "Mengambil dari tabel MS_ProjectStat"
                   },
                   "ProjectCategory": {
-                    "type": "string"
-                  },
-                  "MaxPriceTrailer": {
-                    "type": "number"
-                  },
-                  "MaxPriceTronton": {
-                    "type": "number"
-                  },
-                  "MaxPriceOthers": {
-                    "type": "number"
+                    "description": "Mengambil dari tabel MS_ProjectCategories"
                   }
                 }
               }
@@ -345,4 +369,5 @@
         }
       }
     }
-  }}}
+  }
+}

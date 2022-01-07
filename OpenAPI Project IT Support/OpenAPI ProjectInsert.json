@@ -1,351 +1,371 @@
 {
-    "openapi": "3.0.3",
-    "info": {
-      "title": "Project",
-      "version": "1",
-      "description": "OpenAPI untuk Project",
-      "contact": {
-        "name": "The Master Steel"
-      }
-    },
-    "servers": [
-      {
-        "url": "https://dev.project.com/api/v1",
-        "variables": {
-          "environment": {
-            "default": "dev",
-            "enum": [
-              "dev"
-            ],
-            "description": "server environment"
-          }
-        },
-        "description": "dev openAPI server"
-      }
-    ],
-    "paths": {
-"/ProjectClass/ProjectInsert/": {
-    "post": {
-      "summary": "Membuat Project baru",
-      "description": "Membuat data project baru pada database",
-      "parameters": [
-            {
-              "name": "ProjectID",
-              "description": "untuk Identifier sebuah Project, dengan generate P, diikuti dengan Tanggal/Bulan/Tahun/Jam/Menit/Detik",
-              "required": false,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": true
-              }
-            },
-            {
-              "name": "ProjectName",
-              "description": "menginput nama dari suatu project yang akan diinput",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 100,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "Address1",
-              "description": "menginput alamat jalan project tersebut",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "Address2",
-              "description": "menginput kota dari project tersebut",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "Address3",
-              "description": "menginput provinsi dari project tersebut",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "CityID",
-              "description": "memilih kota, dari daftar list CityID",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "Owner",
-              "description": "memilih Owner, dari daftar Customer",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "ManagementKonstruksi",
-              "description": "memilih Management Konstruksi dari daftar Customer",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "Kontraktor",
-              "description": "memilih Kontraktor dari daftar Customer",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "Konsultant",
-              "description": "memilih Konsultan dari daftar Customer",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "EstimasiFinish",
-              "description": "memilih tanggal, bulan, dan tahun, melalui DateTimePicker1",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "NamaProjectManager",
-              "description": "menginput/memasukan Nama dari Project Manager",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "ContactProjectManager",
-              "description": "menginput/memasukan nomor telepon dari Project Manager",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "BuildingArea",
-              "description": "menginput/memasukan luas bangunan, dengan satuan meter persegi",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 50,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "TotalTonaseRebar",
-              "description": "menginput total ton baja yang digunakan, dengan satuan kilogram",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 50,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "StatusProject",
-              "description": "memilih status project, yang sedang dikerjakan dari ProjectStatID",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "ProjectCategory",
-              "description": "memilih Kategori Project, dari berdasarkan ProjectCategoriesID",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "string",
-                "nullable": false,
-                "maxLength": 250,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "MaxPriceTrailer",
-              "description": "menginput harga dari mobil Trailer, dari suatu project tersebut",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "number",
-                "nullable": false,
-                "maxLength": 50,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "MaxPriceTronton",
-              "description": "menginput harga dari truk Tronton, dari suatu project tersebut",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "number",
-                "nullable": false,
-                "maxLength": 50,
-                "minLength": 1
-              }
-            },
-            {
-              "name": "MaxPriceOthers",
-              "description": "menginput harga lain-lainnya, dari project tersebut",
-              "required": true,
-              "in": "query",
-              "schema": {
-                "type": "number",
-                "nullable": false,
-                "maxLength": 50,
-                "minLength": 1
-              }
-            }
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Project",
+    "version": "1",
+    "description": "OpenAPI untuk Project",
+    "contact": {
+      "name": "The Master Steel"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dev.project.com/api/v1",
+      "variables": {
+        "environment": {
+          "default": "dev",
+          "enum": [
+            "dev"
           ],
-          "responses": {
-            "200": {
-              "description": "Operation Succeeded!",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "properties": {
-                      "ProjectID": {
-                        "type": "string"
-                      },
-                      "ProjectName": {
-                        "type": "string"
-                      },
-                      "Address1": {
-                        "type": "string"
-                      },
-                      "Address2": {
-                        "type": "string"
-                      },
-                      "Address3": {
-                        "type": "string"
-                      },
-                      "CityID": {
-                        "type": "string"
-                      },
-                      "Owner": {
-                        "type": "string"
-                      },
-                      "Management Konstruksi": {
-                        "type": "string"
-                      },
-                      "Kontraktor": {
-                        "type": "string"
-                      },
-                      "Konsultant": {
-                        "type": "string"
-                      },
-                      "EstimasiFinish": {
-                        "type": "string"
-                      },
-                      "NamaProjectManager": {
-                        "type": "string"
-                      },
-                      "ContactProjectManager": {
-                        "type": "string"
-                      },
-                      "BuildingArea": {
-                        "type": "string"
-                      },
-                      "TotalTonaseRebar": {
-                        "type": "string"
-                      },
-                      "StatusProject": {
-                        "type": "string"
-                      },
-                      "ProjectCategory": {
-                        "type": "string"
-                      },
-                      "MaxPriceTrailer": {
-                        "type": "number"
-                      },
-                      "MaxPriceTronton": {
-                        "type": "number"
-                      },
-                      "MaxPriceOthers": {
-                        "type": "number"
-                      }
+          "description": "server environment"
+        }
+      },
+      "description": "dev openAPI server"
+    }
+  ],
+  "paths": {
+    "/ProjectClass/ProjectInsert/": {
+      "post": {
+        "summary": "Membuat Project baru",
+        "description": "Membuat data project baru pada database",
+        "parameters": [
+          {
+            "name": "ProjectID",
+            "description": "untuk Identifier sebuah Project, dengan generate P, diikuti dengan Tanggal/Bulan/Tahun/Jam/Menit/Detik",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ProjectName",
+            "description": "menginput nama dari suatu project yang akan diinput",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 100,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Address1",
+            "description": "menginput alamat jalan project tersebut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Address2",
+            "description": "menginput kota dari project tersebut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Address3",
+            "description": "menginput provinsi dari project tersebut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "CityID",
+            "description": "memilih kota, dari daftar list CityID",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Owner",
+            "description": "memilih Owner, dari daftar Customer",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "ManagementKonstruksi",
+            "description": "memilih Management Konstruksi dari daftar Customer",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Kontraktor",
+            "description": "memilih Kontraktor dari daftar Customer",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "Konsultant",
+            "description": "memilih Konsultan dari daftar Customer",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "EstimasiFinish",
+            "description": "memilih tanggal, bulan, dan tahun, melalui DateTimePicker1",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "NamaProjectManager",
+            "description": "menginput/memasukan Nama dari Project Manager",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "ContactProjectManager",
+            "description": "menginput/memasukan nomor telepon dari Project Manager",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "BuildingArea",
+            "description": "menginput/memasukan luas bangunan, dengan satuan meter persegi",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 50,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "TotalTonaseRebar",
+            "description": "menginput total ton baja yang digunakan, dengan satuan kilogram",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 50,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "StatusProject",
+            "description": "memilih status project, yang sedang dikerjakan dari ProjectStatID",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "ProjectCategory",
+            "description": "memilih Kategori Project, dari berdasarkan ProjectCategoriesID",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": false,
+              "maxLength": 250,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "MaxPriceTrailer",
+            "description": "menginput harga dari mobil Trailer, dari suatu project tersebut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "nullable": false,
+              "maxLength": 50,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "MaxPriceTronton",
+            "description": "menginput harga dari truk Tronton, dari suatu project tersebut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "nullable": false,
+              "maxLength": 50,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "MaxPriceOthers",
+            "description": "menginput harga lain-lainnya, dari project tersebut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "nullable": false,
+              "maxLength": 50,
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Succeeded!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ProjectID": {
+                      "type": "string"
+                    },
+                    "ProjectName": {
+                      "type": "string"
+                    },
+                    "Address1": {
+                      "type": "string"
+                    },
+                    "Address2": {
+                      "type": "string"
+                    },
+                    "Address3": {
+                      "type": "string"
+                    },
+                    "CityID": {
+                      "type": "string"
+                    },
+                    "Owner": {
+                      "type": "string"
+                    },
+                    "Management Konstruksi": {
+                      "type": "string"
+                    },
+                    "Kontraktor": {
+                      "type": "string"
+                    },
+                    "Konsultant": {
+                      "type": "string"
+                    },
+                    "EstimasiFinish": {
+                      "type": "string"
+                    },
+                    "NamaProjectManager": {
+                      "type": "string"
+                    },
+                    "ContactProjectManager": {
+                      "type": "string"
+                    },
+                    "BuildingArea": {
+                      "type": "string"
+                    },
+                    "TotalTonaseRebar": {
+                      "type": "string"
+                    },
+                    "StatusProject": {
+                      "type": "string"
+                    },
+                    "ProjectCategory": {
+                      "type": "string"
+                    },
+                    "MaxPriceTrailer": {
+                      "type": "number"
+                    },
+                    "MaxPriceTronton": {
+                      "type": "number"
+                    },
+                    "MaxPriceOthers": {
+                      "type": "number"
                     }
+                  }
+                },
+                "examples": {
+                  "CityID": {
+                    "description": "Mengambil dari tabel Trx_Project"
+                  },
+                  "Owner": {
+                    "description": "Mengambil dari tabel MS_Supplier"
+                  },
+                  "Management Konstruksi": {
+                    "description": "Mengambil dari tabel MS_Supplier1"
+                  },
+                  "Kontraktor": {
+                    "description": "Mengambil dari tabel MS_Supplier2"
+                  },
+                  "Konsultant": {
+                    "description": "Mengambil dari tabel MS_Supplier3"
+                  },
+                  "StatusProject": {
+                    "description": "Mengambil dari tabel MS_ProjectStat"
+                  },
+                  "ProjectCategory": {
+                    "description": "Mengambil dari tabel MS_ProjectCategories"
                   }
                 }
               }
             }
           }
+        }
+      }
     }
+  }
 }
-    }
-}
-
-
-    
