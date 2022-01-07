@@ -1,0 +1,94 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Project",
+      "version": "1",
+      "description": "OpenAPI untuk Project",
+      "contact": {
+        "name": "The Master Steel"
+      }
+    },
+    "servers": [
+      {
+        "url": "https://dev.project.com/api/v1",
+        "variables": {
+          "environment": {
+            "default": "dev",
+            "enum": [
+              "dev"
+            ],
+            "description": "server environment"
+          }
+        },
+        "description": "dev openAPI server"
+      }
+    ],
+    "paths": {
+    "/ProjectClass/ContractSupplierList": {
+    "get": {
+      "summary": "Menampilkan list Customer",
+      "description": "Menampilkan list data Customer berdasarkan Customer",
+      "parameters": [
+        {
+          "name": "SuplID",
+          "in": "query",
+          "required": false,
+          "description": "mencari data customer berdasar ID",
+          "schema": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 250,
+            "minLength": 1
+          }
+        },
+        {
+          "name": "SuplName",
+          "in": "query",
+          "required": false,
+          "description": "Mencari berdasar nama Supplier",
+          "schema": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 250,
+            "minLength": 1
+          }
+        },
+        {
+          "name": "TypeSupplier",
+          "in": "query",
+          "required": false,
+          "description": "Menampilkan jenis-jenis Supplier",
+          "schema": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 250,
+            "minLength": 1
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Operation Succeeded!",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ProjectCategoriesID": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}}

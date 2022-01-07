@@ -1,0 +1,69 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Project",
+      "version": "1",
+      "description": "OpenAPI untuk Project",
+      "contact": {
+        "name": "The Master Steel"
+      }
+    },
+    "servers": [
+      {
+        "url": "https://dev.project.com/api/v1",
+        "variables": {
+          "environment": {
+            "default": "dev",
+            "enum": [
+              "dev"
+            ],
+            "description": "server environment"
+          }
+        },
+        "description": "dev openAPI server"
+      }
+    ],
+    "paths": {
+    "/ProjectClass/ProjectPCategories": {
+    "get": {
+      "summary": "list Project Category",
+      "description": "Mencari list data Project Category berdasarkan ProjectCategoriesID",
+      "parameters": [
+        {
+          "name": "Description",
+          "in": "query",
+          "required": false,
+          "description": "input pencarian berdasar kategori",
+          "schema": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 250,
+            "minLength": 1
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Operation Succeeded!",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ProjectCategoriesID": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }}}

@@ -1,0 +1,95 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Project",
+    "version": "1",
+    "description": "OpenAPI untuk Project",
+    "contact": {
+      "name": "The Master Steel"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dev.project.com/api/v1",
+      "variables": {
+        "environment": {
+          "default": "dev",
+          "enum": [
+            "dev"
+          ],
+          "description": "server environment"
+        }
+      },
+      "description": "dev openAPI server"
+    }
+  ],
+  "paths": {
+    "/ProjectClass/Sls_ProjectList/": {
+      "get": {
+        "summary": "Menampilkan List Project ",
+        "description": "Hanya akan menampilkan list project sebanyak 50 baris",
+        "parameters": [
+          {
+            "name": "ProjectName",
+            "description": "menampilkan nama project pada grid",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "maxLength": 100,
+              "minLength": 3
+            }
+          },
+          {
+            "name": "City",
+            "description": "menampilkan kota project tersebut",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "maxLength": 100,
+              "minLength": 3
+            }
+          },
+          {
+            "name": "Kontraktor",
+            "description": "menampilkan Kontraktor pada project tersebut",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "maxLength": 100,
+              "minLength": 3
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success get all Project List",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ProjectName": {
+                      "type": "string"
+                    },
+                    "City": {
+                      "type": "string"
+                    },
+                    "Kontraktor": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
+}
