@@ -77,11 +77,62 @@
                     "ProjectName": {
                       "type": "string"
                     },
-                    "City": {
+                    "Address1": {
+                      "type": "string"
+                    },
+                    "Address2": {
+                      "type": "string"
+                    },
+                    "Address3": {
+                      "type": "string"
+                    },
+                    "Kota": {
+                      "type": "string"
+                    },
+                    "Provinsi": {
+                      "type": "string"
+                    },
+                    "EstimasiFinish": {
+                      "type": "string"
+                    },
+                    "Owner": {
+                      "type": "string"
+                    },
+                    "ManagementKonstruksi": {
                       "type": "string"
                     },
                     "Kontraktor": {
                       "type": "string"
+                    },
+                    "Konsultan": {
+                      "type": "string"
+                    },
+                    "NamaPM": {
+                      "type": "string"
+                    },
+                    "ContactPM": {
+                      "type": "string"
+                    },
+                    "BuildingArea": {
+                      "type": "string"
+                    },
+                    "TotalTonase": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "ProjectCategoryName": {
+                      "type": "string"
+                    },
+                    "MaxPriceTrailer": {
+                      "type": "number"
+                    },
+                    "MaxPriceTronton": {
+                      "type": "number"
+                    },
+                    "MaxPriceOthers": {
+                      "type": "number"
                     }
                   }
                 }

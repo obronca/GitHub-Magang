@@ -225,7 +225,7 @@
               "required": true,
               "in": "query",
               "schema": {
-                "type": "string",
+                "type": "number",
                 "nullable": false,
                 "maxLength": 250,
                 "minLength": 1
@@ -237,7 +237,7 @@
               "required": true,
               "in": "query",
               "schema": {
-                "type": "string",
+                "type": "number",
                 "nullable": false,
                 "maxLength": 50,
                 "minLength": 1
@@ -249,7 +249,7 @@
               "required": true,
               "in": "query",
               "schema": {
-                "type": "string",
+                "type": "number",
                 "nullable": false,
                 "maxLength": 50,
                 "minLength": 1
