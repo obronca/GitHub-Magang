@@ -135,7 +135,65 @@
                       "type": "number"
                     }
                   }
-                }
+                },
+                "examples": {
+                  "ProjectName": {
+                    "description": "ambil dari dbo.Trx_Project.ProjectName"
+                  },
+                  "Address1": {
+                    "description": "ambil dari dbo.Trx_Project.Address1"
+                  },
+                  "Address2": {
+                    "description": "ambil dari dbo.Trx_Project.Address2"
+                  },
+                  "Address3": {
+                    "description": "ambil dari dbo.Trx_Project.Address3"
+                  },
+                  "Kota": {
+                    "description": "ambil dari dbo.MS_City.Description"
+                  },
+                  "Provinsi": {
+                    "description": "ambil dari dbo.MS_Provinsi.Description"
+                  },
+                  "Estimasi Finish": {
+                    "description": "ambil dari dbo.Trx_Project.EstimasiFinish"
+                  },
+                  "Owner": {
+                    "description": "ambil dari dbo.MS_Supplier.Supl_Name"
+                  },
+                  "ManagementKonstruksi": {
+                    "description": "ambil dari MS_Supplier_1.Supl_Name"
+                  },
+                  "Konsultan": {
+                    "description": "ambil dari MS_Supplier_3.Supl_Name"
+                  },
+                  "Nama PM": {
+                    "description": "ambil dari dbo.Trx_Project.NamaProjectManager"
+                  },
+                  "Contact PM": {
+                    "description": "ambil dari dbo.Trx_Project.ContactProjectManager"
+                  },
+                  "Building Area": {
+                    "description": "ambil dari dbo.Trx_Project.BuildingArea"
+                  },
+                  "TotalTonase": {
+                    "description": "ambil dari dbo.Trx_Project.TotalTonaseRebar"
+                  },
+                  "Description": {
+                    "description": "ambil dari dbo.MS_ProjectStat.Description"
+                  },
+                  "ProjectCategorName": {
+                    "description": "ambil dari ISNULL(dbo.MS_ProjectCategories.Description,'-')"
+                  },
+                  "MaxPriceTrailer": {
+                    "description": "ambil dari isnull(dbo.Trx_Project.MaxPriceTrailer,'0')"
+                  },
+                  "MaxPriceTronton": {
+                    "description": "ambil dari isnull(dbo.Trx_Project.MaxPriceTronton, 0)"
+                  },
+                  "MaxPriceOthers": {
+                    "description": "ambil dari isnull(dbo.Trx_Project.MaxPriceOthers,'0')"
+                  }
               }
             }
           }
@@ -143,4 +201,4 @@
       }
     }
 }
-}
+}}
